@@ -64,26 +64,26 @@ function generateTitleLinks(customSelector = '') {
 generateTitleLinks();
 
 function calculateTagsParams(tags){
-  let params = {
+    let params = {
     max: 0,
     min: 999999
   };
-  for(let tag in tags){
-    if(tags[tag] > params.max){
+    for(let tag in tags){
+      if(tags[tag] > params.max){
       params.max = tags[tag];
     } else if(tags[tag] < params.min){
       params.min = tags[tag];
     }
   }
-  return params;
+    return params;
 }
 
 function calculateTagClass(count, params){
-  const normalizedCount = count - params.min;
-  const normalizedMax = params.max - params.min;
-  const percentage = normalizedCount / normalizedMax;
-  const classNumber = Math.floor(percentage * (opt.cloudClassCount - 1) + 1);
-  return opt.cloudClassPrefix + classNumber;
+    const normalizedCount = count - params.min;
+    const normalizedMax = params.max - params.min;
+    const percentage = normalizedCount / normalizedMax;
+    const classNumber = Math.floor(percentage * (opt.cloudClassCount - 1) + 1);
+    return opt.cloudClassPrefix + classNumber;
 }
 
 function generateTags(){
@@ -163,6 +163,7 @@ function tagClickHandler(event){
   }
   
 function addClickListenersToTags(){
+    const tagsList = document.querySelectorAll('.tags a');
     /* find all links to tags */
     const allLinksToTags = document.querySelectorAll('.post-tags .list a');
     /* START LOOP: for each link */
@@ -170,6 +171,9 @@ function addClickListenersToTags(){
       /* add tagClickHandler as event listener for that link */
         oneLink.addEventListener('click', tagClickHandler);
     /* END LOOP: for each link */
+    }
+    for(let tag of tagsList){
+      tag.addEventListener('click', tagClickHandler);
     }
   }
   
