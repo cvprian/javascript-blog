@@ -84,6 +84,10 @@ body {
   display: inline-block;
 }
 
+.tags li {
+  display: inline-block;
+}
+
 /* Authors */
 .authors li {
   margin-bottom: 12px;
@@ -109,5 +113,30 @@ body {
 
 .post-tags p {
   margin: 0 10px 0 0;
+}
+
+a.tag-size-1 {
+  font-size: 12px;
+  color: #03d442af;
+}
+
+a.tag-size-2 {
+  font-size: 18px;
+  color: #08c708;
+}
+
+a.tag-size-3 {
+  font-size: 24px;
+  color: #06db34;
+}
+
+a.tag-size-4 {
+  font-size: 30px;
+  color: #0dff05;
+}
+
+a.tag-size-5 {
+  font-size: 36px;
+  color: #4bff4b;
 }
 /*# sourceMappingURL=style.css.map */
